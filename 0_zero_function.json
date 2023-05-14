@@ -1,0 +1,13 @@
+{
+  "name": "Zero Function Turing Machine",
+  "description": "Outputs the number 0 regardless of the input.",
+  "states": ["q0"],
+  "alphabet": ["0", "1", "_"],
+  "transitions": {
+    "q0_0": ["q0", "0", "R"],
+    "q0_1": ["q0", "0", "R"],
+    "q0__": ["q0", "0", "R"]
+  },
+  "initial_state": "q0",
+  "final_states": []
+}
