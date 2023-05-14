@@ -1,0 +1,25 @@
+{
+  "name": "Addition Turing Machine",
+  "description": "Performs addition of two binary numbers on the tape.",
+  "states": ["q0", "q1", "q2", "q3", "q4"],
+  "alphabet": ["0", "1", "_"],
+  "transitions": {
+    "q0_0": ["q0", "0", "R"],
+    "q0_1": ["q0", "1", "R"],
+    "q0__": ["q1", "_", "L"],
+    "q1_0": ["q2", "_", "L"],
+    "q1_1": ["q1", "1", "R"],
+    "q1__": ["q2", "_", "L"],
+    "q2_0": ["q2", "0", "L"],
+    "q2_1": ["q2", "1", "L"],
+    "q2__": ["q3", "_", "R"],
+    "q3_0": ["q3", "0", "R"],
+    "q3_1": ["q3", "1", "R"],
+    "q3__": ["q4", "_", "L"],
+    "q4_0": ["q4", "0", "L"],
+    "q4_1": ["q4", "1", "L"],
+    "q4__": ["q0", "_", "R"]
+  },
+  "initial_state": "q0",
+  "final_states": []
+}
