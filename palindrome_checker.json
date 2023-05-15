@@ -1,0 +1,28 @@
+{
+  "name": "Palindrome Checking Turing Machine",
+  "description": "Checks whether a given string on the tape is a palindrome.",
+  "states": ["q0", "q1", "q2", "q3", "q4", "q5"],
+  "alphabet": ["0", "1", "_"],
+  "transitions": {
+    "q0_0": ["q0", "0", "R"],
+    "q0_1": ["q0", "1", "R"],
+    "q0__": ["q1", "_", "L"],
+    "q1_0": ["q2", "_", "L"],
+    "q1_1": ["q2", "_", "L"],
+    "q1__": ["q5", "_", "R"],
+    "q2_0": ["q2", "0", "L"],
+    "q2_1": ["q2", "1", "L"],
+    "q2__": ["q3", "_", "R"],
+    "q3_0": ["q4", "_", "R"],
+    "q3_1": ["q4", "_", "R"],
+    "q3__": ["q5", "_", "R"],
+    "q4_0": ["q4", "0", "R"],
+    "q4_1": ["q4", "1", "R"],
+    "q4__": ["q5", "_", "R"],
+    "q5_0": ["q5", "0", "R"],
+    "q5_1": ["q5", "1", "R"],
+    "q5__": ["q0", "_", "R"]
+  },
+  "initial_state": "q0",
+  "final_states": ["q0", "q3"]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Binary Counter Turing Machine",
+  "description": "Acts as a binary counter, incrementing a binary number on the tape by one in each step.",
+  "states": ["q0", "q1", "q2", "q3", "q4", "q5"],
+  "alphabet": ["0", "1", "_"],
+  "transitions": {
+    "q0_0": ["q1", "1", "R"],
+    "q0_1": ["q1", "0", "R"],
+    "q0__": ["q1", "1", "R"],
+    "q1_0": ["q1", "0", "R"],
+    "q1_1": ["q1", "1", "R"],
+    "q1__": ["q2", "_", "L"],
+    "q2_0": ["q3", "1", "L"],
+    "q2_1": ["q2", "0", "L"],
+    "q2__": ["q3", "1", "L"],
+    "q3_0": ["q4", "0", "L"],
+    "q3_1": ["q3", "1", "L"],
+    "q3__": ["q4", "0", "L"],
+    "q4_0": ["q4", "0", "L"],
+    "q4_1": ["q4", "1", "L"],
+    "q4__": ["q5", "_", "R"],
+    "q5_0": ["q0", "1", "R"],
+    "q5_1": ["q5", "0", "R"],
+    "q5__": ["q0", "1", "R"]
+  },
+  "initial_state": "q0",
+  "final_states": []
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Constant Function Turing Machine",
+  "description": "Outputs the original input.",
+  "states": ["q0"],
+  "alphabet": ["0", "1", "_"],
+  "transitions": {
+    "q0_0": ["q0", "0", "R"],
+    "q0_1": ["q0", "1", "R"],
+    "q0__": ["q0", "_", "R"]
+  },
+  "initial_state": "q0",
+  "final_states": []
+}
