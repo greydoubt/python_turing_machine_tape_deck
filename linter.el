@@ -1,3 +1,7 @@
+(defpat parsing ( ['function nsx parameters $ code] )
+   (setq code (maplist 'parsing code true))   
+   (nconcn (list 'defun (atom nsx) (parsing parameters)) code)
+)
 ; lambda function definition
 (defpat parsing ( ['function nm parameters $ code] )
    (setq code (maplist 'parsing code false))   
