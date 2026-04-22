@@ -1,3 +1,10 @@
+; define a macro to create a loop
+(defmacro my-loop (var start end body)
+  `(do ((,var ,start (+ ,var 1)))
+       ((> ,var ,end))
+     ,body))
+
+
 (defpat parsing ( ['function nsx parameters $ code] )
    (setq code (maplist 'parsing code true))   
    (nconcn (list 'defun (atom nsx) (parsing parameters)) code)
