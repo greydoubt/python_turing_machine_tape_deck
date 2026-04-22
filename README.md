@@ -10,3 +10,8 @@ one or more binary sequences (separated by an operator if not passing a singleto
 example:
 for the zero TM, any input (0, 1, 10, 11, 110,...) will return output 0
 for the addition TM, the sequence will be added mechanically by the TM and outputs their sum as a new sequence
+
+(defpat parsing ( ['function nm parameters $ code] )
+   (setq code (maplist 'parsing code false))   
+   (nconcn (list 'defun (atom nm) (parsing parameters)) code)
+)
